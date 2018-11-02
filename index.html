@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/font-awesome/css/all.css">
+  <title>Projet 3</title>
+  <script src="assets/angularjs/angular.js"></script>
+  <script src = "assets/js/app.js"></script>
+  <script src = "assets/js/snow.js"></script>
+</head>
+<body ng-app = "myModule" ng-controller = "myController">
+  <header>
+    <img class="imgHiverCS" src="assets/images/hiver2.jpg" alt="hiver" />
+    <div class="coupon">
+      <div class="containerCoupon">
+        <h2 class="reductitle">Jaipafroa</h2>
+        <img class="logo" src="assets/images/echarpe.svg" style="width:20%;">
+      </h3>
+      <h3 class="reduc" value="20">20% sur toute votre commande</h3>
+      <p class="texteCoupon">Lorem ipsum..</p>
+      <p class="texteCoupon">Votre code promo : <span class="promo">reduclamanu</span></p>
+      <p class="texteCoupon">Valable jusqu'au 31 décembre 2018</p>
+    </div>
+  </div>
+</header>
+<div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+  <div class="row barTitleCS">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex">
+      <img class="echarpeCS" src="assets/images/echarpe.svg" alt="écharpe">
+      <h1 class="logoTitleCS">Jaipafroa</h1>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+      <form class="form-inline my-2 my-lg-0 searchCS displayOKCS">
+        <input class="form-control mr-sm-2 inputSearchCS" ng-model="productCategory" type="search" placeholder="Rechercher un produit">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+      </form>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" id="customize">
+      <button class="bg-success buttonPanierCS" data-toggle="modal" data-target=".bd-example-modal-lg">
+        <img class="panierCS" src="assets/images/panier.svg" alt="panier"/>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- MODAL -->
+<!-- Large modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-dark">
+        <h1 class="modal-title text-center" id="exampleModalLongTitle">..:: PANIER ::..</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <h5 class="text-center">Mes articles</h5>
+      <div class="shopping-cart">
+        <!-- Début structure d'ajout au panier d'un produit -->
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>Photos</th>
+              <th>Produits</th>
+              <th>Quantité</th>
+              <th>Prix</th>
+              <th>Ajouter</th>
+              <th>Enlever</th>
+              <th>Supprimer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="cart in carts" ng-init="setTotals(cart)">
+              <td><img width="60" ng-src="{{cart.productImage}}"/></td>
+              <td>{{cart.productName}}</td>
+              <td>{{cart.productQt}}</td>
+              <td style="width:84px;">{{cart.productPrice}} €</td>
+              <td><button type = "button" ng-click = "addCartButton(cart)" class = "btn btn-success"><i class="fas fa-plus"></i></button></td>
+              <td><button type = "button" ng-click = "downCartButton(cart)" class = "btn btn-warning"><i class="fas fa-minus"></i></button></td>
+              <td><button type = "button" ng-click = "removeCart(cart)" class = "btn btn-danger"><i class="fas fa-times"></i></button></td>
+            </tr>
+            <tr>
+              <td colspan="7" class="bg-secondary"></td>
+            </tr>
+            <tr>
+              <td colspan="5"></td>
+              <td class="borderBottomTdDL" align="right">Total TTC</td>
+              <td class="borderTdDL">{{total | currency : ""}} €</td>
+            </tr>
+            <tr>
+              <td colspan="5"></td>
+              <td class="borderBottomTdDL" align="right">Taxe 5.5%</td>
+              <td class="borderTdDL">{{totalTVA = ((total*5.5)/100) | currency : ""}} €</td>
+            </tr>
+            <tr>
+              <td colspan="5"></td>
+              <td class="borderBottomTdDL" align="right">Total HT</td>
+              <td class="borderTdDL">{{totalHT =(total-totalTVA) | currency : ""}} €</td>
+            </tr>
+            <tr>
+              <td colspan="5"></td>
+              <td class="borderBottomTdDL" align="right">Frais de port de<br> 3.00 €</td>
+              <td class="borderTdDL">{{totalFDP = 3 | currency : ""}} €</td>
+            </tr>
+            <tr>
+              <td colspan="5"></td>
+              <td class="borderBottomTdDL" align="right">CODE PROMO<br><pre style="color:red;">ON S'OCCUPE DE TOUT</pre></td>
+              <td class="borderTdDL"><span>reduclamanu</span><br>{{totalred = ((total*20)/100) | currency : ''}} €</td>
+            </tr>
+            <tr>
+              <td colspan="5"></td>
+              <td class="borderBottomTdDL" align="right"><strong>NET A PAYER</strong></td>
+              <td class="borderTdDL bg-warning"><strong>{{total-totalred+totalFDP | currency : ""}} €</strong></td>
+            </tr>
+            <tr>
+              <td colspan="7" class="bg-secondary"></td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Fin de la structure d'un produit au panier -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">Continuer vos achats</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-cyril-modal-lg">Passer la commande</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- fIN MODAL -->
+<!-- Large modal formulaire -->
+<div class="modal fade bd-cyril-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-dark">
+        <h1 class="modal-title modalTitleDL text-center" id="exampleModalLongTitle">..:: FORMULAIRE ::..</h1>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="container-fluid">
+        <form ng-submit="formuAdd.addShow()" name="formValidator" id="formValidator" class=" mt-5">
+          <div class="form-group">
+            <div class="col-md-10 offset-md-1 mb-3">
+              <label for="firstName">Nom</label>
+              <input ng-model="formuAdd.new.firstName" name="firstName" id="firstName" type="text" ng-pattern="firstName_add" ng-required="true" class="form-control is-valid" placeholder="Nom" value="" required>
+              <pre class="redBox" ng-show="formValidator.firstName.$error.pattern">Votre Nom doit contenir entre minimum 3 et maximum 30 caractères sans accent ni espace</pre>
+              <pre class="greenBox" ng-show="formValidator.firstName.$valid">Votre Nom est valide</pre>
+              <label for="lastName">Prénom</label>
+              <input ng-model="formuAdd.new.lastName" name="lastName" id="lastName" type="text" ng-pattern="lastName_add" ng-required="true" class="form-control is-valid" placeholder="Prénom" value="" required>
+              <pre class="redBox" ng-show="formValidator.lastName.$error.pattern">Votre Prénom doit contenir entre minimum 3 et maximum 30 caractères sans accent ni espace</pre>
+              <pre class="greenBox" ng-show="formValidator.lastName.$valid">Votre Prénom est valide</pre>
+            </div>
+            <div class="col-md-10 offset-md-1 mb-3">
+              <label for="phone">Votre numéro de téléphone</label>
+              <input ng-model="formuAdd.new.phone" name="phone" id="datepicker" type="tel" ng-pattern="phone_add" ng-required="true" class="form-control is-valid" placeholder="Votre numéro de téléphone" value="" required>
+              <pre class="redBox" ng-show="formValidator.phone.$error.pattern">Votre Numéro de téléphone ne doit contenir que des chiffres</pre>
+              <pre class="greenBox" ng-show="formValidator.phone.$valid">Votre Numéro de téléphone est valide</pre>
+              <label for="date">Date de naissance</label>
+              <input ng-model="formuAdd.new.date" name="date" id="date" type="date" ng-pattern="date_add" ng-required="true" class="form-control is-valid" placeholder="exemple : 02/11/2018" value="" required>
+              <pre class="redBox" ng-show="formValidator.date.$error.pattern">Votre date de naissance ne doit contenir que des chiffres</pre>
+              <pre class="greenBox" ng-show="formValidator.date.$valid">Votre date de naissance est valide</pre>
+            </div>
+            <div class="col-md-10 offset-md-1 mb-3">
+              <label for="validationServer01">E-mail</label>
+              <input name="email" ng-model="formuAdd.new.email" id="mail" type="text" ng-pattern="mail_add" ng-required="true" placeholder="Email" class="form-control" >
+              <pre class="redBox" ng-show="formValidator.email.$error.pattern">Email Non valide</pre>
+              <pre class="greenBox" ng-show="formValidator.email.$valid">Email valide</pre>
+            </div>
+            <div class="col-md-10 offset-md-1 mb-3">
+              <label for="object">Adresse</label>
+              <input name="object" ng-model="formuAdd.new.object" id="object" type="text" ng-pattern="object_add" ng-required="true" class="form-control is-valid" placeholder="Votre Adresse" value="" required>
+              <pre class="redBox" ng-show="formValidator.object.$error.pattern">L'adresse doit contenir entre minimum 3 et maximum 30 caractères sans accent</pre>
+              <pre class="greenBox" ng-show="formValidator.object.$valid">l'adresse est valide</pre>
+            </div>
+            <div class="col-md-10 offset-md-1 mb-3">
+              <label for="validationServer01">Information complémentaire concernant votre livraison</label>
+              <textarea ng-model="formuAdd.new.mess"  class="form-control is-valid" id="validationServer01"  value=""></textarea>
+            </div>
+          </div>
+        </form>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+          <button type="submit" ng-disabled="formValidator.$invalid" class="btn btn-primary float-right" data-toggle="modal" data-target=".bd-cyrilS-modal-lg">Soumettre</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade bd-cyrilS-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <p>Votre commande est validée</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- fIN MODAL -->
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Accueil<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Blouson</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Echarpe</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Gants</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Parapluie</a>
+      </li>
+    </ul>
+  </div>
+  <form class="form-inline my-2 my-lg-0 searchCS displayCS" ng-model="filtre">
+    <input class="form-control mr-sm-2 inputSearchCS" ng-model="productCategory" type="search" placeholder="Rechercher un produit">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+  </form>
+</nav>
+<!-- AURELIE -->
+<div class="container-fluid">
+  <!--carousel début-->
+  <div class="col-xs-12 col-md-12 col-sm-12 col-lg-12 col-xl-12">
+    <div class="row">
+      <div id="demo" class="carousel slide" data-ride="carousel">
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-30 h-20" src="assets/images/echarpe1.jpg" alt="echarpe1">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-30 h-20" src="assets/images/gants1.jpg" alt="gants1">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-30 h-20" src="assets/images/manteau1.jpg" alt="manteau1">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-30 h-20" src="assets/images/manteau2.jpg" alt="manteau2">
+          </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+      <!--carousel fin-->
+    </div><!-- /row -->
+  </div><!-- /col-md-12 col-lg-12 col-xs-12 -->
+  <div class="container-fluid d-flex">
+    <div class="col-xs-0 col-md-1 col-sm-1 col-lg-1 col-xl-1">
+      <div class="row">
+        <!--sidebar début-->
+        <div id="sidebar" class="active">
+          <!-- Page Content Holder -->
+          <span id="sidebarCollapse" role="button" class="buttonSidebarDL" aria-expanded="false"></span>
+          <div class="sidebar-header">
+            <h3 class="sidebarTitle">Jaipafroa</h3>
+            <strong>Jaipafroa</strong>
+          </div>
+          <ul class="list-unstyled components">
+            <li class="active">
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                <i class="fas fa-home"></i>
+                Accueil
+              </a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li><a href="#">Parapluie</a></li>
+                <li><a href="#">Manteau</a></li>
+                <li><a href="#">Gants</a></li>
+                <li><a href="#">Echarpe</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fas fa-briefcase"></i>
+                A propos
+              </a>
+            </li>
+            <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                <i class="fas fa-copy"></i>
+                Boutique
+              </a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li><a href="#">Parapluie</a></li>
+                <li><a href="#">Manteau</a></li>
+                <li><a href="#">Gants</a></li>
+                <li><a href="#">Echarpe</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false">
+                <i class="fas fa-file-signature"></i>
+                Contact
+              </a>
+              <ul class="collapse list-unstyled" id="homeSubmenu1">
+                <li>Tel : 0323456789</li>
+                <li>Mail : contact@jaipafroa.fr </li>
+                <li>Adresse : 10 rue du paradis
+                  02123 jycrois</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div><!-- /row -->
+      </div><!-- /col-xs-1 col-md-1 col-sm-1 col-lg-1 col-xl-1 -->
+      <div class="col-xs-10 offset-xs-1 col-md-11 col-sm-11 col-lg-11 col-xl-11">
+        <div class="row">
+          <div class="container">
+            <div class="productDL">
+              <div class="col-xs-3 col-md-3 col-sm-3 col-lg-3 col-xl-3 text-center producListDL" ng-repeat="product in products | filter:productCategory">
+                <div class="ruban">
+                  <a href="{{productCategory}}"><h5>{{product.productName}}</h5></a>
+                </div>
+                <div class="ruban_gauche"></div>
+                <div class="ruban_droit"></div>
+                <img class="zoom" ng-src="{{product.productImage}}"/>
+                <div class="text-left">Description du produit : <small>{{product.productDesc}}</small></div>
+                <div class="btn btn-danger text-white">Prix : {{product.productPrice | currency: ""}} €</div>
+                <button class="btn btn-success mt-3" type="button" ng-click="addCart(product)"><i class="fas fa-cart-plus"></i> Ajouter au panier</button>
+              </div>
+            </div>
+          </div>
+        </div><!-- /row -->
+      </div><!-- /col-xs-11 col-md-11 col-sm-11 col-lg-11 col-xl-11 -->
+    </div><!-- /container-fluid -->
+  </div><!-- /container-fluid -->
+  <!--sidebar fin-->
+
+  <!-- footer -->
+  <footer class="text-center bg-dark text-white">
+    <div class="container">
+      <div class=" center">
+        <h2 class="h2FootDL">LOREM IPSUM</h2>
+        <div class="lineDL">
+          <hr class="hrFootDL">
+        </div>
+      </div>
+      <div class="space"></div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6 ">
+          <i class="fas fa-lightbulb"></i>
+          <h4 class="h4FootDL">Nos points forts</h4>
+          <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+          <i class="fas fa-users"></i>
+          <h4 class="h4FootDL">Nos partenaires</h4>
+          <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+          <i class="fas fa-truck"></i>
+          <h4 class="h4FootDL">Livraison</h4>
+          <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+          <i class="fas fa-share-square"></i>
+          <h4 class="h4FootDL">Nous suivre :</h4>
+          <p class="text-justify">
+            <label class="labelNewsDL" for="newsletter">NEWSLETTERS</label>
+            <input type="mail" placeholder="votremail@lamanu.fr"/>
+          </p>
+          <p>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter-square"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-google-plus-square"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <p>
+      <a class="btn btn-primary" href="#">Retour en haut</a>
+    </p>
+  </footer>
+
+
+  <script src="assets/js/jquery-3.2.1.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.js"></script>
+  <script src="assets/js/sidebar.js"></script>
+</body>
+</html>

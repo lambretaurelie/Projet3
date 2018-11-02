@@ -1,0 +1,557 @@
+body, .container-fluid{
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: Arial;
+}
+/******NAVBAR HEAD *****/
+a.nav-link{
+  color: yellow !important;
+  font-weight: bold;
+  font-size: 2rem;
+}
+/**** HEADER ****/
+.imgHiverCS{
+  height: 33%;
+  width: 100%;
+}
+/****** BOUTON RECHERCHE *****/
+.btn-outline-success{
+  background-color: yellow;
+}
+/****** TITRE + LOGO *****/
+.barTitleCS{
+  background-color: #cecccc;
+  height: 90px;
+  line-height: 90px;
+}
+.echarpeCS{
+  margin-left: 5%;
+  width: 15%;
+}
+.logoTitleCS{
+  color: #bf241c;
+  font-size: 4.3em;
+  font-family: Arial;
+  margin-left: 1%;
+  font-weight: bold;
+}
+/**** CHAMP DE RECHERCHE ****/
+.displayCS{
+  display: none;
+}
+.searchCS{
+  margin-top: 7% !important;
+  margin-left: 13%;
+}
+.inputSearchCS{
+  width: 185px !important;
+}
+/**** PANIER ****/
+.buttonPanierCS{
+  float: right;
+  margin-top: 20px;
+  margin-right: 100px;
+  width: 100px;
+  height: 50px;
+  transition: .5;
+  line-height: 50px;
+}
+.panierCS{
+  width: 40px;
+}
+/**** MODAL ****/
+.modal-body{
+  text-align: center;
+}
+.modal-title{
+  margin-left: 31%;
+  color: white;
+}
+.modalTitleDL{
+  margin-left: 27%;
+  color: white;
+}
+.close{
+  color: white;
+}
+.borderBottomTdDL{
+  border-bottom: 1px solid black;
+}
+.borderTdDL{
+  text-align: center;
+  border: 1px solid black;
+}
+/***** PRODUITS ******/
+.ruban {
+  background: #b1c70d;
+  height: 50px;
+  width: 240px;
+  position: relative;
+  left:-11px;
+  top: -13px;
+  float: left;
+  box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
+  z-index: 100;
+}
+
+.ruban a h5 {
+  font-size: 1.5em;
+  font-family: Arial;
+  color: wheat;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, .4);
+  text-align: center;
+  margin:10px;
+  position: relative;
+  top: 1px;
+  font-weight: bold;
+  background-color: olive;
+  box-shadow: inset 2px 2px 3px rgba(0,0,0, .4);
+  border-radius: 5px;
+  text-shadow: 1px 1px rgba(0, 0, 0, .6),
+  2px 2px rgba(0, 0, 0, .6),
+  3px 3px rgba(0, 0, 0, .6);
+}
+.ruban_gauche {
+  border-color: transparent #7e9202 transparent transparent;
+  border-style:solid;
+  border-width:15px;
+  height:0px;
+  width:0px;
+  position: relative;
+  left: -27px;
+  top: 25px;
+  z-index: 1;
+}
+
+.ruban_droit {
+  border-color: transparent transparent transparent #7e9202;
+  border-style:solid;
+  border-width:15px;
+  height:0px;
+  width:0px;
+  position: relative;
+  left: 213px;
+  top: -6px;
+  z-index: 1;
+}
+#bg-background{
+  background-color:#fff;
+  padding:10px;
+  border-radius:5px;
+}
+.productDL{
+  padding:5px;
+  clear:both;
+}
+.producListDL{
+  background-color:#fff;
+  width:240px;
+  max-width:240px;
+  max-height:550px;
+  padding:10px;
+  border:1px solid #000;
+  float:left;
+  margin:15px;
+}
+.producListDL img{
+  height:100px;
+  width:100px;
+  transition: all 1s ease;
+}
+.producListDL img:hover{
+  width: 180px;
+  height: 180px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  transform:scale(1.25);
+}
+/******* AURELIE ***********/
+/**** COUPON REDUC ****/
+.coupon{
+  border: 5px dotted #2D82BB;
+  width: 30%;
+  border-radius: 15px;
+  margin: 0 auto;
+  max-width: 600px;
+  z-index: 4;
+  animation: coupon 3s infinite;
+}
+@keyframes coupon {
+  0%   { z-index:-9; right: 20px; top: 20px; position:absolute; }
+  100% { z-index:10; right : 20px; top: 20px; position: absolute;}
+}
+.containerCoupon{
+  padding: 2px 16px;
+  background-color: #f1f1f1;
+  background-color:white
+}
+.table th, .table td{
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+.promo{
+  background: #ccc;
+  padding: 3px;
+}
+.texteCoupon{
+  font-size: 12px;
+}
+.logo{
+  float: right;
+}
+.reductitle{
+  font-family: Arial;
+  text-align: center;
+  color: blue;
+}
+.reduc{
+  font-size: 16px;
+  font-style: oblique;
+  color:red;
+}
+
+/**** CAROUSEL ****/
+.carousel{
+  width: 100%;
+}
+.carousel-inner img{
+  width: 30%;
+  height:200px;
+  margin: 0 auto;
+}
+/*
+DEMO STYLE
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+body {
+  font-family: "Poppins", sans-serif;
+  background: white;
+}
+p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+  color: #999;
+}
+a, a:hover, a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.navbarAS {
+  padding: 15px 10px;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
+}
+i, span {
+  display: inline-block;
+}
+/* ---------------------------------------------------
+SIDEBAR STYLE
+----------------------------------------------------- */
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: #FEE5FB;
+  color: black;
+  transition: all 0.3s;
+  font-style: italic;
+  font-family: serif;
+  font-size: 16px;
+  height: 100vh;
+  z-index: 999;
+  position: relative;
+  left:0;
+}
+#sidebar.active {
+  min-width: 80px;
+  max-width: 80px;
+  text-align: center;
+}
+#sidebar.active .sidebar-header h3, #sidebar.active .CTAs {
+  display: none;
+}
+#sidebar.active .sidebar-header strong {
+  display: block;
+  font-style: italic;
+  font-family: serif;
+  font-size: 10px;
+}
+#sidebar ul li a {
+  text-align: left;
+}
+#sidebar.active ul li a {
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 0.85em;
+  font-style: italic;
+  font-family: serif;
+}
+#sidebar.active ul li a i {
+  margin-right:  0;
+  display: block;
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+#sidebar.active ul ul a {
+  padding: 10px !important;
+}
+#sidebar.active a[aria-expanded="false"]::before, #sidebar.active a[aria-expanded="true"]::before {
+  top: auto;
+  bottom: 5px;
+  right: 50%;
+  transform: translateX(50%);
+}
+#sidebar .sidebar-header {
+  text-align: center;
+  background: #FEE5FB;
+  font-style: italic;
+  font-family: serif;
+  font-size: 60px;
+}
+.sidebarTitle{
+  font-size: 0.5em ;
+  font-weight: bold;
+}
+#sidebar .sidebar-header strong {
+  display: none;
+  font-size: 1em;
+}
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #47748b;
+}
+#sidebar ul li a {
+  padding: 10px;
+  font-size: 1.1em;
+  display: block;
+}
+#sidebar ul li a:hover {
+  color: #F98BFF;
+  background: #fff;
+  font-style: italic;
+  font-family: serif;
+  font-size: 24px;
+}
+#sidebar ul li a i {
+  margin-right: 10px;
+}
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+  color: black;
+  background: #FEE5FB;
+}
+a[data-toggle="collapse"] {
+  position: relative;
+}
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before{
+  content: ">";
+  color: black;
+  display: block;
+  position: absolute;
+  font-family: Arial;
+  right: 20px;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+a[aria-expanded="true"]::before {
+  content: "<";
+}
+.buttonSidebarDL[aria-expanded="false"]::before{
+  content: ">>";
+  color: black;
+  display: block;
+  font-family: Arial;
+  position: relative;
+  left: 45px;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 40px;
+  height: 40px;
+  background-color: #FEE5FB;
+}
+.buttonSidebarDL[aria-expanded="true"]::after {
+  content: "<<" !important;
+  color: red;
+}
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #FEE5FB;
+}
+ul.CTAs {
+  padding: 20px;
+}
+ul.CTAs a {
+  text-align: center;
+  font-size: 0.9em !important;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+/***** FOOTER *****/
+footer {
+  padding: 10px 0;
+}
+.fa-share-square, .fa-truck,
+.fa-users, .fa-lightbulb{
+  font-size: 40px;
+  border: solid #FCAC45 4px;
+  width: 100px;
+  height: 100px;
+  padding: 27px 25px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  transition: all 0.5s;
+  color: #FFF;
+  transition: 2s
+}
+.fa-lightbulb:hover{
+  color:yellow;
+  transition: .6s;
+}
+.fa-users:hover{
+  color: cyan;
+  transition: .6s;
+}
+.fa-truck:hover{
+  color: red;
+  transition: .6s;
+  transform: rotate(0.5turn);
+}
+.h2FootDL, .h4FootDL {
+  color: white;
+}
+.lineDL{
+  margin: 10px 0;
+}
+.hrFootDL {
+  background-color: white;
+}
+.labelNewsDL{
+  text-decoration: underline;
+  font-weight:
+}
+/*** ICONS ***/
+.fa-facebook{
+  font-size: 2.5em;
+  color: #4267b2;
+}
+.fa-twitter-square{
+  font-size: 2.5em;
+  color: #1da1f2;
+}
+.fa-linkedin{
+  font-size: 2.5em;
+  color: #0077b5;
+}
+.fa-google-plus-square{
+  font-size: 2.5em;
+  color: #db4437;
+}
+.fa-instagram{
+  font-size: 2.5em;
+  color: #843dcb;
+}
+.fa-shopping-basket{
+  font-size: 2em;
+}
+/***** INPUT FORMULAIRE *****/
+input{
+    color: #000;
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 10px;
+}
+.redBox{
+  background: red;
+  color: white;
+  padding: 2px;
+  text-align: center;
+}
+.greenBox{
+  background: darkgreen;
+  color: white;
+  padding: 2px;
+  text-align: center;
+}
+/***** RESPONSIVE ******/
+@media screen and (max-width: 30em) {
+  .coupon{
+    border: none;
+    width: 100vw;
+    height: 120px;
+    border-radius: 15px;
+    margin: 0 auto;
+    max-width: 150px;
+    z-index: 4;
+    animation: coupon 3s infinite;
+  }
+  @keyframes coupon {
+    0%   { z-index:-9; left: 0; top: 0; position:absolute; }
+    100% { z-index:10; left : 0; top: 0; position: absolute;}
+  }
+  .containerCoupon{
+    width: 100vw;
+    height: 110px;
+    padding: 2px ;
+    background-color: #f1f1f1;
+    background-color:white
+  }
+  .table th, .table td{
+    vertical-align: middle !important;
+    text-align: center !important;
+  }
+  .promo{
+    display: none;
+  }
+  .texteCoupon{
+    font-size: 10px;
+  }
+  .texteCoupon{
+    display: none;
+  }
+
+  #sidebar {
+    display: none;
+  }
+  .barTitle{
+    text-align: center;
+  }
+  .logoTitleCS{
+    font-size: 3.3em;
+  }
+  .displayCS{
+    display: block;
+  }
+  .displayOKCS{
+    display: none;
+  }
+  .buttonPanierCS{
+    float: right;
+    position: absolute;
+    top: -51px;
+    right: -82px;
+    z-index: 9999;
+  }
+  .panierCS{
+    width: 40px;
+  }
+}

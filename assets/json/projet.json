@@ -1,0 +1,230 @@
+{p_category: "Blousons":[
+  {
+    p_id : "blouson1",
+    p_image: "assets/images/blousons/1.jpg",
+    p_name: "Blouson1",
+    p_price: 69.55,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "blouson2",
+    p_image: "assets/images/blousons/2.jpg",
+    p_name: "Blouson2",
+    p_price: 69.55,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "blouson3",
+    p_image: "assets/images/blousons/3.jpg",
+    p_name: "Blouson3",
+    p_price: 69.55,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "blouson4",
+    p_image: "assets/images/blousons/4.jpg",
+    p_name: "Blouson4",
+    p_price: 69.55,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "blouson5",
+    p_image: "assets/images/blousons/5.jpg",
+    p_name: "Blouson5",
+    p_price: 69.55,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  }
+],
+p_category: "Gants":[
+  {
+    p_id : "gant1",
+    p_image: "assets/images/gants/1.jpeg",
+    p_name: "Gant1",
+    p_price: 29.95,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "gant2",
+    p_image: "assets/images/gants/2.jpeg",
+    p_name: "Gant2",
+    p_price: 29.95,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "gant3",
+    p_image: "assets/images/gants/3.jpeg",
+    p_name: "Gant3",
+    p_price: 29.95,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "gant4",
+    p_image: "assets/images/gants/4.jpeg",
+    p_name: "Gant4",
+    p_price: 29.95,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "gant5",
+    p_image: "assets/images/gants/5.jpeg",
+    p_name: "Gant5",
+    p_price: 29.95,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  }
+],
+p_category: "Parapluies":[
+  {
+    p_id : "parapluie1",
+    p_image: "assets/images/parapluie/1.jpg",
+    p_name: "Parapluie1",
+    p_price: 19.99,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "parapluie2",
+    p_image: "assets/images/parapluie/2.jpg",
+    p_name: "Parapluie2",
+    p_price: 19.99,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "parapluie3",
+    p_image: "assets/images/parapluie/3.jpg",
+    p_name: "Parapluie3",
+    p_price: 19.99,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "parapluie4",
+    p_image: "assets/images/parapluie/4.jpg",
+    p_name: "Parapluie4",
+    p_price: 19.99,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "parapluie5",
+    p_image: "assets/images/parapluie/5.jpg",
+    p_name: "Parapluie5",
+    p_price: 19.99,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "parapluie6",
+    p_image: "assets/images/parapluie/6.jpg",
+    p_name: "Parapluie6",
+    p_price: 19.99,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "parapluie7",
+    p_image: "assets/images/parapluie/7.jpg",
+    p_name: "Parapluie7",
+    p_price: 19.99,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  }
+],
+p_category: "Echarpes":[
+  {
+    p_id : "echarpe1",
+    p_image: "assets/images/echarpes/1.jpg",
+    p_name: "Echarpe1",
+    p_price: 9.95,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "echarpe2",
+    p_image: "assets/images/echarpes/2.jpg",
+    p_name: "Echarpe2",
+    p_price: 9.95,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "echarpe3",
+    p_category: "echarpes",
+    p_image: "assets/images/echarpes/3.jpg",
+    p_name: "Echarpe3",
+    p_price: 9.95,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "echarpe4",
+    p_image: "assets/images/echarpes/4.jpg",
+    p_name: "Echarpe4",
+    p_price: 9.95,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  },
+  {
+    p_id : "echarpe5",
+    p_image: "assets/images/echarpes/5.jpg",
+    p_name: "Echarpe5",
+    p_price: 9.95,
+    p_desc: "Lorem ipsum dolor sit amet consectetur\
+     adipisicing elit deserunt voluptates at officia\
+      ab dignissimos praesentium rerum voluptatem",
+    p_qt: 1
+  }
+]
+}
